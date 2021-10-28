@@ -17,6 +17,9 @@
 #define USE_UART        0x04
 #define USE_ADC         0x08
 
+const float Slope = 58.249;
+const float YInt = -115.7;
+
 class MaxBotix 
 {
 private:

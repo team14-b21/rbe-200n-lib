@@ -167,6 +167,10 @@ void MaxBotix::MB_ISR(void)
  */
 bool MaxBotix::getDistance(float& distance)
 {
-    distance = -99;
+    int pulseWidth = checkEcho();
+    if (pulseWidth) {
+        distance = (pulseWidth - YInt) / Slope;
+        return true;
+    }
     return false;
 }
