@@ -27,4 +27,5 @@ public:
     float SetKp(float k) {return Kp = k;}
     float SetKi(float k) {sumError = 0; return Ki = k;}
     float SetKd(float k) {return Kd = k;}
+    float setTarget(float t) {return target = t;}
 };
