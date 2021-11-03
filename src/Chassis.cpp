@@ -38,10 +38,10 @@ void Chassis::allocateTimer(int PWMgenerationTimer)
 
 void Chassis::motorHandler(void)
 {
-    if(!timerAllocated) allocateTimer(0);
-
-    leftMotor.process();
+	leftMotor.process();
     rightMotor.process();
+
+    if(!timerAllocated) allocateTimer(0);
 
     //here's where you'll update the pose in Lab 2
 	//updatePose(leftMotor.getSpeed(), ...);
@@ -61,6 +61,7 @@ void Chassis::init(void)
 	allocateTimer(0); // used by the DC Motors
 	leftMotor.attach();
     rightMotor.attach();
+	motorHandler();
 }
 
 void Chassis::loop(void)
